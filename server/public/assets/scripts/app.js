@@ -1,4 +1,28 @@
+/* I realize that I don't know how to connect angular with mongoose.
+I don't know how to use the information from the form in my angular code.
+ */
 
+var app = angularModule('catApp', ['ngRoute']);
+
+app.config(function($routeProvider){
+    // set up routes
+    $routeProvider.when('/', {
+        templateUrl: '/views/index.html',
+        controller: 'catCtrl'
+    });
+});
+
+app.controller('catCtrl', ['$scope', '$http', function($scope, $http){
+    $http({
+        url:'/',
+        method:'get'
+    }).then(function(){
+
+    });
+}]);
+
+/*
+OLD CODE
 
 $(document).ready(function(){
 
@@ -43,4 +67,4 @@ function appendDom(data){
         var $el = $("#container").children().last();
         $el.append("<p>" + data[i].username + "</p>");
     }
-}
+} */

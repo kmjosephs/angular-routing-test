@@ -1,19 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="catApp">
 <head>
     <meta charset="UTF-8">
     <title>Whatevs</title>
-
-    <script type="text/javascript" src="vendors/jquery.min.js"></script>
+    <script type="text/javascript" src="vendors/angular.js"></script>
+    <script type="text/javascript" src="vendors/angular-route.js"></script>
     <script type="text/javascript" src="assets/scripts/app.js"></script>
 </head>
 <body>
-    <form id="catform">
+    <form id="catform" ng-submit="" ng-controller="catCtrl">
         <label for="username">Cat User Name:</label>
         <input type="text" name="username" id="username"/>
         <input type="submit" value="Submit"/>
     </form>
 
-    <div id="container"></div>
+    <div id="container" ng-repeat="cat in cats">{{cat.username}}</div>
 </body>
 </html>
